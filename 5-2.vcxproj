@@ -138,8 +138,25 @@
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\5_7 %28마우스 콜백%29\5_7마우스 드래그.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\5_8 %28메뉴 콜백%29\5_8메뉴 조작.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\5_9 %28계단식 메뉴%29\5_9메뉴 조작2.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\6_3 %28기하변환%29\6_3기하변환.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\6_6 %28태양계 모델링%29\6_6태양계 시뮬레이션.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\6_8 %28시점변환%29\6_8조명,뷰포트.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\6_8kbd\티팟 키보드.cpp" />
+    <ClCompile Include="Viewportbase.cpp" />
+    <ClCompile Include="basicBase.cpp" />
+    <ClCompile Include="경찰차경광등.cpp" />
+    <ClCompile Include="경마 세로 아래로.cpp" />
+    <ClCompile Include="경마 세로.cpp" />
+    <ClCompile Include="경마 우에서 좌로.cpp" />
+    <ClCompile Include="두더지게임.cpp" />
+    <ClCompile Include="사각형격자게임.cpp" />
+    <ClCompile Include="원뿔_과제.cpp" />
+    <ClCompile Include="클릭시 사각형 이동.cpp" />
+    <ClCompile Include="클릭하면 녹색으로.cpp" />
+    <ClCompile Include="두더지 경주.cpp" />
     <ClCompile Include="집그리기.cpp" />
     <ClCompile Include="시계.cpp" />
+    <ClCompile Include="표준출력.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
