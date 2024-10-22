@@ -3,7 +3,8 @@
 #include <gl/glu.h>
 #include <stdio.h>
 
-float angle = 0.0f;  // 회전 각도
+float angleX = 0.0f;  // X축 회전 각도
+float angleY = 0.0f;  // Y축 회전 각도
 GLfloat eX = 0.0;
 GLfloat eY = 0.0;
 GLfloat eZ = 3.0; // 카메라를 z축 방향으로 뒤로 이동
@@ -54,7 +55,9 @@ void MyDisplay() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	gluLookAt(eX, eY, eZ, aX, aY, aZ, uX, uY, uZ);
-
+	// 물체 회전
+	glRotatef(angleX, 1.0f, 0.0f, 0.0f); // X축 회전
+	glRotatef(angleY, 0.0f, 1.0f, 0.0f); // Y축 회전
 	// 정육면체 그리기
 	for (int i = 0; i < 6; i++) {
 		glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, &MyVertexList[4 * i]);
@@ -70,22 +73,22 @@ void MyDisplay() {
 	glutSwapBuffers();
 }
 
-void UpdateRotation() {
-	// 현재 시간을 측정
-	static int lastTime = 0;
-	int currentTime = glutGet(GLUT_ELAPSED_TIME);
-	float deltaTime = (currentTime - lastTime) / 1000.0f;  // 초 단위로 변환
-
-	// 원하는 FPS (예: 60fps)에 맞춰 회전 속도 조절
-	float rotationSpeed = 30.0f;  // 초당 30도 회전
-	angle += rotationSpeed * deltaTime;
-
-	if (angle > 360.0f)
-		angle -= 360.0f;
-
-	lastTime = currentTime;
-	glutPostRedisplay();
-}
+//void UpdateRotation() {
+//	// 현재 시간을 측정
+//	static int lastTime = 0;
+//	int currentTime = glutGet(GLUT_ELAPSED_TIME);
+//	float deltaTime = (currentTime - lastTime) / 1000.0f;  // 초 단위로 변환
+//
+//	// 원하는 FPS (예: 60fps)에 맞춰 회전 속도 조절
+//	float rotationSpeed = 30.0f;  // 초당 30도 회전
+//	angle += rotationSpeed * deltaTime;
+//
+//	if (angle > 360.0f)
+//		angle -= 360.0f;
+//
+//	lastTime = currentTime;
+//	glutPostRedisplay();
+//}
 
 void SetupProjection() {
 	glMatrixMode(GL_PROJECTION);
@@ -94,87 +97,46 @@ void SetupProjection() {
 }
 
 void KB(unsigned char KeyPressed, int X, int Y) {
-
 	switch (KeyPressed) {
-	case 'q':
-	case 'Q':
-		eX += 0.1;
-		break;
-	case 'w':
-	case 'W':
-		eY += 0.1;
-		break;
-	case 'e':
-	case 'E':
-		eZ += 0.1;
-		break;
-	case 'a':
-	case 'A':
-		eX -= 0.1;
-		break;
-	case 's':
-	case 'S':
-		eY -= 0.1;
-		break;
-	case 'd':
-	case 'D':
-		eZ -= 0.1;
-		break;
+	case 'q': case 'Q': eX += 0.1; break;
+	case 'w': case 'W': eY += 0.1; break;
+	case 'e': case 'E': eZ += 0.1; break;
+	case 'a': case 'A': eX -= 0.1; break;
+	case 's': case 'S': eY -= 0.1; break;
+	case 'd': case 'D': eZ -= 0.1; break;
+	case 'r': case 'R': aX += 0.1; break;
+	case 't': case 'T': aY += 0.1; break;
+	case 'y': case 'Y': aZ += 0.1; break;
+	case 'f': case 'F': aX -= 0.1; break;
+	case 'g': case 'G': aY -= 0.1; break;
+	case 'h': case 'H': aZ -= 0.1; break;
+	case 'u': case 'U': uX += 0.1; break;
+	case 'i': case 'I': uY += 0.1; break;
+	case 'o': case 'O': uZ += 0.1; break;
+	case 'j': case 'J': uX -= 0.1; break;
+	case 'k': case 'K': uY -= 0.1; break;
+	case 'l': case 'L': uZ -= 0.1; break;
+	}
+	printf("eye(%.2f, %.2f, %.2f) at(%.2f, %.2f, %.2f) up(%.2f, %.2f, %.2f)\n", eX, eY, eZ, aX, aY, aZ, uX, uY, uZ);
+	glutPostRedisplay();
+}
 
-	case 'r':
-	case 'R':
-		aX += 0.1;
+// 화살표 키 입력에 따른 각도 조절
+void SpecialKeys(int key, int x, int y) {
+	switch (key) {
+	case GLUT_KEY_RIGHT:
+		angleY += 5.0f;  // Y축으로 회전 (좌우 회전)
 		break;
-	case 't':
-	case 'T':
-		aY += 0.1;
+	case GLUT_KEY_LEFT:
+		angleY -= 5.0f;  // Y축으로 반대 방향 회전
 		break;
-	case 'y':
-	case 'Y':
-		aZ += 0.1;
+	case GLUT_KEY_UP:
+		angleX += 5.0f;  // X축으로 회전 (위로 회전)
 		break;
-	case 'f':
-	case 'F':
-		aX -= 0.1;
-		break;
-	case 'g':
-	case 'G':
-		aY -= 0.1;
-		break;
-	case 'h':
-	case 'H':
-		aZ -= 0.1;
-		break;
-
-	case 'u':
-	case 'U':
-		uX += 0.1;
-		break;
-	case 'i':
-	case 'I':
-		uY += 0.1;
-		break;
-	case 'o':
-	case 'O':
-		uZ += 0.1;
-		break;
-	case 'j':
-	case 'J':
-		uX -= 0.1;
-		break;
-	case 'k':
-	case 'K':
-		uY -= 0.1;
-		break;
-	case 'l':
-	case 'L':
-		uZ -= 0.1;
+	case GLUT_KEY_DOWN:
+		angleX -= 5.0f;  // X축으로 반대 방향 회전
 		break;
 	}
-	//eZ = sqrt(1-eX*eX);
-
-	printf("eye(%.2f, %.2f, %.2f) at(%.2f, %.2f, %.2f) up(%.2f, %.2f, %.2f)\n", eX, eY, eZ, aX, aY, aZ, uX, uY, uZ);
-
 	glutPostRedisplay();
 }
 
@@ -189,7 +151,7 @@ int main(int argc, char** argv) {
 
 	SetupProjection();  // 원근 투영 설정
 	glutDisplayFunc(MyDisplay);
-	glutIdleFunc(UpdateRotation);  // Idle 함수에 회전 업데이트 설정
+	glutSpecialFunc(SpecialKeys);  // 화살표 키 입력 설정
 	glutKeyboardFunc(KB);
 	glutMainLoop();
 	return 0;
