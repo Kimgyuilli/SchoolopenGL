@@ -149,6 +149,10 @@
     <ClCompile Include="경마 세로.cpp" />
     <ClCompile Include="경마 우에서 좌로.cpp" />
     <ClCompile Include="두더지게임.cpp" />
+    <ClCompile Include="문제 5.cpp" />
+    <ClCompile Include="문제 6-2.cpp" />
+    <ClCompile Include="문제 7.cpp" />
+    <ClCompile Include="문제6.cpp" />
     <ClCompile Include="사각형격자게임.cpp" />
     <ClCompile Include="원뿔_과제.cpp" />
     <ClCompile Include="클릭시 사각형 이동.cpp" />
