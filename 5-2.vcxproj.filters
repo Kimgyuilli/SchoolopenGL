@@ -114,6 +114,9 @@
     <ClCompile Include="문제 7.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="로봇팔.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

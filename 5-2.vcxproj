@@ -149,6 +149,7 @@
     <ClCompile Include="경마 세로.cpp" />
     <ClCompile Include="경마 우에서 좌로.cpp" />
     <ClCompile Include="두더지게임.cpp" />
+    <ClCompile Include="로봇팔.cpp" />
     <ClCompile Include="문제 5.cpp" />
     <ClCompile Include="문제 6-2.cpp" />
     <ClCompile Include="문제 7.cpp" />
