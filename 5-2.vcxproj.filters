@@ -102,16 +102,13 @@
     <ClCompile Include="원뿔_과제.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="문제 5.cpp">
+    <ClCompile Include="시계2%28문제 5%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="문제6.cpp">
+    <ClCompile Include="사각형 증가 충동감지%28문제 6%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="문제 6-2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="문제 7.cpp">
+    <ClCompile Include="사각형 회전 증가 튕김%28문제 7%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="로봇팔.cpp">
