@@ -142,6 +142,9 @@
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\6_6 %28태양계 모델링%29\6_6태양계 시뮬레이션.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\6_8 %28시점변환%29\6_8조명,뷰포트.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\6_8kbd\티팟 키보드.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\7_1 %28뷰포트 분할에 의한 투상%29\7_1투시 방법별 표현.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3 %28차 주전자 그리기%29\8_3차주전자 3개.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3_CullFaceTest\8_3차주전자.cpp" />
     <ClCompile Include="Viewportbase.cpp" />
     <ClCompile Include="basicBase.cpp" />
     <ClCompile Include="경찰차경광등.cpp" />
@@ -150,6 +153,7 @@
     <ClCompile Include="경마 우에서 좌로.cpp" />
     <ClCompile Include="두더지게임.cpp" />
     <ClCompile Include="로봇팔.cpp" />
+    <ClCompile Include="사각형 확대충돌2.cpp" />
     <ClCompile Include="시계2%28문제 5%29.cpp" />
     <ClCompile Include="사각형 증가 충동감지%28문제 6%29.cpp" />
     <ClCompile Include="사각형 회전 증가 튕김%28문제 7%29.cpp" />

@@ -6,8 +6,9 @@
 //
 //GLfloat red = 1.0f, green = 0.0f, blue = 0.0f;
 //GLfloat angle = 0.0f;
-//int tick_count = 0;
+//int tick_count = 6;
 //int is_running = 0; // 시계 작동 여부
+//
 //
 //void drawText(float x, float y, const char* string, void* font) {
 //    glRasterPos2f(x, y);
@@ -57,13 +58,13 @@
 //
 //void timer(int value) {
 //    if (is_running) {
-//        angle -= 45.0f;
+//        angle -= 30.0f;
 //        if (angle <= -360.0f) {
 //            angle = 0.0f;
 //        }
 //
 //        tick_count++;
-//        if (tick_count >= 8) {
+//        if (tick_count >= 12) {
 //            tick_count = 0;
 //            if (red == 1.0f) {
 //                red = 0.0f; blue = 1.0f;

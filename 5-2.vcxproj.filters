@@ -114,6 +114,18 @@
     <ClCompile Include="로봇팔.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\7_1 %28뷰포트 분할에 의한 투상%29\7_1투시 방법별 표현.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="사각형 확대충돌2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3 %28차 주전자 그리기%29\8_3차주전자 3개.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3_CullFaceTest\8_3차주전자.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
