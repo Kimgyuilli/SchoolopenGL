@@ -126,6 +126,15 @@
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3_CullFaceTest\8_3차주전자.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="carsimul.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11 (두개의 광원)\10_11.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11_street_light\10_11_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

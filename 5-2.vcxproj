@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11 (두개의 광원)\10_11.cpp" />
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11_street_light\10_11_2.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\5_10 %28아이들 콜백%29\5_10네모 튕기기.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\5_11 %28타이머 콜백%29\5_11오브젝트 2개 이동.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\5_12 %28타이머 콜백II%29\5_12타이머 눈뽕.cpp" />
@@ -145,6 +147,7 @@
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\7_1 %28뷰포트 분할에 의한 투상%29\7_1투시 방법별 표현.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3 %28차 주전자 그리기%29\8_3차주전자 3개.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3_CullFaceTest\8_3차주전자.cpp" />
+    <ClCompile Include="carsimul.cpp" />
     <ClCompile Include="Viewportbase.cpp" />
     <ClCompile Include="basicBase.cpp" />
     <ClCompile Include="경찰차경광등.cpp" />
