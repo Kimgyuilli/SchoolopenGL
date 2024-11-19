@@ -129,10 +129,16 @@
     <ClCompile Include="carsimul.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11 (두개의 광원)\10_11.cpp">
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11 %28두개의 광원%29\10_11도넛.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11_street_light\10_11_2.cpp">
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_11_street_light\10_11_도넛2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\10_12 (광원애니메이션)\10_12.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="cargimal.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
