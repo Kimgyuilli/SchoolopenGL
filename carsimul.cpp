@@ -145,376 +145,111 @@ void setText() {
 }
 
 // draws rectangular building with windows
-void drawRectangleBuilding1(int i, int j) {
+void drawRectangleBuilding(int i, int j, int sel) {
 	glMatrixMode(GL_MODELVIEW);
 	glCullFace(GL_BACK);
 
 	glPushMatrix();
 	//middle
-
-	glTranslatef(i + 9, 7.0f, j + 7.0);
-	glScalef(3, 3, 3);
-
-	glColorMaterial(GL_FRONT, GL_DIFFUSE);
-	glBegin(GL_QUADS);
-	// Top face (y = 1.0f)
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-
-	// Bottom face (y = -1.0f)
-	glColor3f(1.0f, 0.5f, 0.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	// Front face  (z = 1.0f)
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-
-	// Back face (z = -1.0f)
-	glColor3f(1.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-
-	// Left face (x = -1.0f)
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-
-	// Right face (x = 1.0f)
-	glColor3f(1.0f, 0.0f, 1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	//Right Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(1.1, 0.3, -0.5);
-	glVertex3f(1.1, 0.3, 0.5);
-	glVertex3f(1.1, -0.3, 0.5);
-	glVertex3f(1.1, -0.3, -0.5);
-
-	//Left Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(-1.1, 0.3, 0.5);
-	glVertex3f(-1.1, 0.3, -0.5);
-	glVertex3f(-1.1, -0.3, -0.5);
-	glVertex3f(-1.1, -0.3, 0.5);
-
-	//Front Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, -1.0f, 1.1f);
-	glVertex3f(0.5f, -1.0f, 1.1f);
-
-	//Back Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, 1.0f, -1.1f);
-	glVertex3f(0.5f, 1.0f, -1.1f);
-
-	glEnd();  // End of drawing rectangle building
-
-	glPopMatrix();
-}
-
-// draws cylinder building with cube on top
-void drawRectangleBuilding2(int i, int j) {
-	glMatrixMode(GL_MODELVIEW);
-	glCullFace(GL_BACK);
-
-	//draw cube on top
-	glPushMatrix();
-	//right
-	glTranslatef(i + 8, 7.0f, j - 8.0);
-	glScalef(3, 3, 3);
-
-	glColorMaterial(GL_FRONT, GL_DIFFUSE);
-	glBegin(GL_QUADS);
-	// Top face (y = 1.0f)
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-
-	// Bottom face (y = -1.0f)
-	glColor3f(1.0f, 0.5f, 0.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	// Front face  (z = 1.0f)
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-
-	// Back face (z = -1.0f)
-	glColor3f(1.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-
-	// Left face (x = -1.0f)
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-
-	// Right face (x = 1.0f)
-	glColor3f(1.0f, 0.0f, 1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	//Right Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(1.1, 0.3, -0.5);
-	glVertex3f(1.1, 0.3, 0.5);
-	glVertex3f(1.1, -0.3, 0.5);
-	glVertex3f(1.1, -0.3, -0.5);
-
-	//Left Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(-1.1, 0.3, 0.5);
-	glVertex3f(-1.1, 0.3, -0.5);
-	glVertex3f(-1.1, -0.3, -0.5);
-	glVertex3f(-1.1, -0.3, 0.5);
-
-	//Front Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, -1.0f, 1.1f);
-	glVertex3f(0.5f, -1.0f, 1.1f);
-
-	//Back Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, 1.0f, -1.1f);
-	glVertex3f(0.5f, 1.0f, -1.1f);
-
-	glEnd();  // End of drawing rectangle building
-
-	glPopMatrix();
-}
-
-// draws sphere building with small cylinder on top
-void drawRectangleBuilding3(int i, int j)
-{
-	glMatrixMode(GL_MODELVIEW);
-	glCullFace(GL_BACK);
-
-	// draw small cylinder on top
-	glPushMatrix();
-
-	glTranslatef(i + 18.0f, 6.0f, j - 9.0f);
-	glScalef(3, 3, 3);
-
-	glColorMaterial(GL_FRONT, GL_DIFFUSE);
-	glBegin(GL_QUADS);
-	// Top face (y = 1.0f)
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-
-	// Bottom face (y = -1.0f)
-	glColor3f(1.0f, 0.5f, 0.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	// Front face  (z = 1.0f)
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-
-	// Back face (z = -1.0f)
-	glColor3f(1.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-
-	// Left face (x = -1.0f)
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-
-	// Right face (x = 1.0f)
-	glColor3f(1.0f, 0.0f, 1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	//Right Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(1.1, 0.3, -0.5);
-	glVertex3f(1.1, 0.3, 0.5);
-	glVertex3f(1.1, -0.3, 0.5);
-	glVertex3f(1.1, -0.3, -0.5);
-
-	//Left Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(-1.1, 0.3, 0.5);
-	glVertex3f(-1.1, 0.3, -0.5);
-	glVertex3f(-1.1, -0.3, -0.5);
-	glVertex3f(-1.1, -0.3, 0.5);
-
-	//Front Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, -1.0f, 1.1f);
-	glVertex3f(0.5f, -1.0f, 1.1f);
-
-	//Back Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, 1.0f, -1.1f);
-	glVertex3f(0.5f, 1.0f, -1.1f);
-
-	glEnd();  // End of drawing rectangle building
-
-	glPopMatrix();
-}
-
-// draws sphere building with small cylinder on top
-void drawRectangleBuilding4(int i, int j)
-{
-	glMatrixMode(GL_MODELVIEW);
-	glCullFace(GL_BACK);
-
-	// draw small cylinder on top
-	glPushMatrix();
-
-	glTranslatef(i + 18.0f, 6.0f, j + 7.0f);
-	glScalef(3, 3, 3);
-
-	glColorMaterial(GL_FRONT, GL_DIFFUSE);
-	glBegin(GL_QUADS);
-	// Top face (y = 1.0f)
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-
-	// Bottom face (y = -1.0f)
-	glColor3f(1.0f, 0.5f, 0.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	// Front face  (z = 1.0f)
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-
-	// Back face (z = -1.0f)
-	glColor3f(1.0f, 1.0f, 0.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-
-	// Left face (x = -1.0f)
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, 1.0f);
-	glVertex3f(-1.0f, 2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, -1.0f);
-	glVertex3f(-1.0f, -2.5f, 1.0f);
-
-	// Right face (x = 1.0f)
-	glColor3f(1.0f, 0.0f, 1.0f);
-	glVertex3f(1.0f, 2.5f, -1.0f);
-	glVertex3f(1.0f, 2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, 1.0f);
-	glVertex3f(1.0f, -2.5f, -1.0f);
-
-	//Right Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(1.1, 0.3, -0.5);
-	glVertex3f(1.1, 0.3, 0.5);
-	glVertex3f(1.1, -0.3, 0.5);
-	glVertex3f(1.1, -0.3, -0.5);
-
-	//Left Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(-1.1, 0.3, 0.5);
-	glVertex3f(-1.1, 0.3, -0.5);
-	glVertex3f(-1.1, -0.3, -0.5);
-	glVertex3f(-1.1, -0.3, 0.5);
-
-	//Front Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, 1.0f, 1.1f);
-	glVertex3f(-0.5f, -1.0f, 1.1f);
-	glVertex3f(0.5f, -1.0f, 1.1f);
-
-	//Back Window
-	glColor3f(0.3, 0.3, 0.3);
-	glVertex3f(0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, -1.0f, -1.1f);
-	glVertex3f(-0.5f, 1.0f, -1.1f);
-	glVertex3f(0.5f, 1.0f, -1.1f);
-
-	glEnd();  // End of drawing rectangle building
-
-	glPopMatrix();
-}
-
-// Creates a building specified by "selection"
-void drawBuildingGeneral(int i, int j, int selection) {
-	switch (selection) {
-	case 0:
-		drawRectangleBuilding1(i, j);
+	switch (sel)
+	{
+	case 0:	
+		glTranslatef(i + 8, 7.0f, j + 8.0);
 		break;
 	case 1:
-		drawRectangleBuilding2(i, j);
+		glTranslatef(i - 8, 7.0f, j - 8.0);
 		break;
 	case 2:
-		drawRectangleBuilding3(i, j);
+		glTranslatef(i + 17, 7.0f, j - 17.0);
 		break;
 	case 3:
-		drawRectangleBuilding4(i, j);
+		glTranslatef(i + 8, 7.0f, j + 17.0);
+		break;
+	default:
 		break;
 	}
+	//glTranslatef(i + 8, 7.0f, j + 8.0);
+	glScalef(3, 3, 3);
+
+	glColorMaterial(GL_FRONT, GL_DIFFUSE);
+	glBegin(GL_QUADS);
+	// Top face (y = 1.0f)
+	glColor3f(0.0f, 1.0f, 0.0f);
+	glVertex3f(1.0f, 2.5f, -1.0f);
+	glVertex3f(-1.0f, 2.5f, -1.0f);
+	glVertex3f(-1.0f, 2.5f, 1.0f);
+	glVertex3f(1.0f, 2.5f, 1.0f);
+
+	// Bottom face (y = -1.0f)
+	glColor3f(1.0f, 0.5f, 0.0f);
+	glVertex3f(1.0f, -2.5f, 1.0f);
+	glVertex3f(-1.0f, -2.5f, 1.0f);
+	glVertex3f(-1.0f, -2.5f, -1.0f);
+	glVertex3f(1.0f, -2.5f, -1.0f);
+
+	// Front face  (z = 1.0f)
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex3f(1.0f, 2.5f, 1.0f);
+	glVertex3f(-1.0f, 2.5f, 1.0f);
+	glVertex3f(-1.0f, -2.5f, 1.0f);
+	glVertex3f(1.0f, -2.5f, 1.0f);
+
+	// Back face (z = -1.0f)
+	glColor3f(1.0f, 1.0f, 0.0f);
+	glVertex3f(1.0f, -2.5f, -1.0f);
+	glVertex3f(-1.0f, -2.5f, -1.0f);
+	glVertex3f(-1.0f, 2.5f, -1.0f);
+	glVertex3f(1.0f, 2.5f, -1.0f);
+
+	// Left face (x = -1.0f)
+	glColor3f(0.0f, 0.0f, 1.0f);
+	glVertex3f(-1.0f, 2.5f, 1.0f);
+	glVertex3f(-1.0f, 2.5f, -1.0f);
+	glVertex3f(-1.0f, -2.5f, -1.0f);
+	glVertex3f(-1.0f, -2.5f, 1.0f);
+
+	// Right face (x = 1.0f)
+	glColor3f(1.0f, 0.0f, 1.0f);
+	glVertex3f(1.0f, 2.5f, -1.0f);
+	glVertex3f(1.0f, 2.5f, 1.0f);
+	glVertex3f(1.0f, -2.5f, 1.0f);
+	glVertex3f(1.0f, -2.5f, -1.0f);
+
+	//Right Window
+	glColor3f(0.3, 0.3, 0.3);
+	glVertex3f(1.1, 0.3, -0.5);
+	glVertex3f(1.1, 0.3, 0.5);
+	glVertex3f(1.1, -0.3, 0.5);
+	glVertex3f(1.1, -0.3, -0.5);
+
+	//Left Window
+	glColor3f(0.3, 0.3, 0.3);
+	glVertex3f(-1.1, 0.3, 0.5);
+	glVertex3f(-1.1, 0.3, -0.5);
+	glVertex3f(-1.1, -0.3, -0.5);
+	glVertex3f(-1.1, -0.3, 0.5);
+
+	//Front Window
+	glColor3f(0.3, 0.3, 0.3);
+	glVertex3f(0.5f, 1.0f, 1.1f);
+	glVertex3f(-0.5f, 1.0f, 1.1f);
+	glVertex3f(-0.5f, -1.0f, 1.1f);
+	glVertex3f(0.5f, -1.0f, 1.1f);
+
+	//Back Window
+	glColor3f(0.3, 0.3, 0.3);
+	glVertex3f(0.5f, -1.0f, -1.1f);
+	glVertex3f(-0.5f, -1.0f, -1.1f);
+	glVertex3f(-0.5f, 1.0f, -1.1f);
+	glVertex3f(0.5f, 1.0f, -1.1f);
+
+	glEnd();  // End of drawing rectangle building
+
+	glPopMatrix();
 }
+
+
+
 
 void drawGround()
 {
@@ -628,16 +363,8 @@ void drawHorizontalStreet(int j) {
 //Each block is 20x20 units
 void generateBlock(int i, int j)
 {
-	//Rectangle
-	drawBuildingGeneral(i, j, 0);
-
-	//Cylinder
-	drawBuildingGeneral(i, j, 1);
-
-	//Sphere
-	drawBuildingGeneral(i, j, 2);
-
-	drawBuildingGeneral(i, j, 3);
+	for(int sel = 0; sel < 4; sel++)
+		drawRectangleBuilding(i, j, sel);
 }
 
 void generateCity()
