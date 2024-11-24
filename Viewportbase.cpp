@@ -30,14 +30,7 @@
 //    // 화면을 흰색으로 클리어
 //    glClear(GL_COLOR_BUFFER_BIT);
 //
-//    // 빨간색 사각형 그리기
-//    glColor3f(1.0f, 0.0f, 0.0f);
-//    glBegin(GL_QUADS);
-//    glVertex2f(100, 100);  // 좌하단
-//    glVertex2f(200, 100);  // 우하단
-//    glVertex2f(200, 200);  // 우상단
-//    glVertex2f(100, 200);  // 좌상단
-//    glEnd();
+//
 //
 //    // 버퍼를 교체하여 그린 내용을 화면에 표시
 //    glutSwapBuffers();
