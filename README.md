@@ -1,2 +1,2 @@
-School OpenGL
+ School OpenGL
  
