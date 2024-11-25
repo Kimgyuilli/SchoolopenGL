@@ -29,6 +29,90 @@ GLvoid InitGL(GLfloat Width, GLfloat Height)
 	gluQuadricDrawStyle(t, GLU_FILL);
 }
 
+// draws rectangular building with windows
+void drawRectangleBuilding(int i, int j, int sel) {
+	glMatrixMode(GL_MODELVIEW);
+	glCullFace(GL_BACK);
+
+	glPushMatrix();
+	//middle
+	switch (sel)
+	{
+	case 0:	
+		glTranslatef(i + 8, 7.0f, j + 8.0);
+		break;
+	case 1:
+		glTranslatef(i + 8, 7.0f, j + 17.0);
+		break;
+	default:
+		break;
+	}
+	//glTranslatef(i + 8, 7.0f, j + 8.0);
+	glScalef(3, 3, 3);
+
+	glColorMaterial(GL_FRONT, GL_DIFFUSE);
+	glBegin(GL_QUADS);
+	// Top face (y = 1.0f)
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glVertex3f(1.0f, 2.5f, -1.0f);
+	glVertex3f(-1.0f, 2.5f, -1.0f);
+	glVertex3f(-1.0f, 2.5f, 1.0f);
+	glVertex3f(1.0f, 2.5f, 1.0f);
+
+	// Front face  (z = 1.0f)
+	glColor3f(0.25f, 0.25f, 0.25f);
+	glVertex3f(1.0f, 2.5f, 1.0f);
+	glVertex3f(-1.0f, 2.5f, 1.0f);
+	glVertex3f(-1.0f, -2.5f, 1.0f);
+	glVertex3f(1.0f, -2.5f, 1.0f);
+
+	// Back face (z = -1.0f)
+	glColor3f(0.5f, 0.5f, 0.5f);
+	glVertex3f(1.0f, -2.5f, -1.0f);
+	glVertex3f(-1.0f, -2.5f, -1.0f);
+	glVertex3f(-1.0f, 2.5f, -1.0f);
+	glVertex3f(1.0f, 2.5f, -1.0f);
+
+	// Left face (x = -1.0f)
+	glColor3f(0.75f, 0.75f, 0.75f);
+	glVertex3f(-1.0f, 2.5f, 1.0f);
+	glVertex3f(-1.0f, 2.5f, -1.0f);
+	glVertex3f(-1.0f, -2.5f, -1.0f);
+	glVertex3f(-1.0f, -2.5f, 1.0f);
+
+	// Right face (x = 1.0f)
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(1.0f, 2.5f, -1.0f);
+	glVertex3f(1.0f, 2.5f, 1.0f);
+	glVertex3f(1.0f, -2.5f, 1.0f);
+	glVertex3f(1.0f, -2.5f, -1.0f);
+
+	glEnd();  // End of drawing rectangle building
+
+	glPopMatrix();
+
+}
+
+// draws sphere building with small cylinder on top
+void drawSphereBuilding(int i, int j)
+{
+	glMatrixMode(GL_MODELVIEW);
+	glCullFace(GL_BACK);
+
+	// draw sphere on bottom
+	glPushMatrix();
+	glTranslatef(i, 4.0f, j+8);
+	glScalef(2, 2, 2);
+
+
+	glColor3f(0, 0, 0);
+	glutSolidSphere(2, 30, 30);
+
+	glPopMatrix();
+	// end draw sphere
+}
+
+
 void drawGround()
 {
 	// Ground
@@ -154,6 +238,12 @@ void display()
 	processLookAtView();
 	generateCity();
 	drawGround();
+	for (int z = 0; z < 3; z++) {
+		for (int i = 0; i < 2; i++) {
+			drawRectangleBuilding(0, z * (-25), i);
+			drawSphereBuilding(17, i*10);
+		}
+	}
 	glutSwapBuffers();
 }
 
