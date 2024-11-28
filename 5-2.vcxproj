@@ -150,6 +150,7 @@
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3_CullFaceTest\8_3차주전자.cpp" />
     <ClCompile Include="cargimal.cpp" />
     <ClCompile Include="carsimul.cpp" />
+    <ClCompile Include="CarSImulator.cpp" />
     <ClCompile Include="citymodel.cpp" />
     <ClCompile Include="rester.cpp" />
     <ClCompile Include="Viewportbase.cpp" />
