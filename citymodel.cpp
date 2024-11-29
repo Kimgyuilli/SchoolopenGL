@@ -42,7 +42,8 @@
 //	glViewport(0, 0, Width, Height);
 //	glMatrixMode(GL_PROJECTION);
 //	glLoadIdentity();
-//	gluPerspective(60.0, Width / Height, 0.1, 1000.0); // Increased far clipping plane
+//	gluPerspective(60.0, Width / Height, 0.1, 1000.0); // 원근투상
+//	//glOrtho(-45.0, 60.0, -40.0, 45.0, 0.0, 100.0); //평행투상
 //	glMatrixMode(GL_MODELVIEW);
 //}
 //
@@ -543,8 +544,9 @@
 //void processLookAtView()
 //{
 //	glLoadIdentity();
-//	glRotatef(-45, 0, 0, 1);
-//	gluLookAt(30.0, 60.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0); // Optimized camera position
+//	//glRotatef(-45, 0, 0, 1);
+//	//gluLookAt(30.0, 60.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0); // Optimized camera position
+//	gluLookAt(8.0, 30.0, 35.0, 8.0, 0.0, 0.0, 0.0, 0.0, -1.0); // Optimized camera position
 //	GLfloat light_position[] = { 30.0f, 60.0f, 30.0f, 1.0f };
 //	glLightfv(GL_LIGHT0, GL_POSITION, light_position); // Update light position
 //	glPushMatrix();
@@ -587,7 +589,7 @@
 //
 //	glMatrixMode(GL_PROJECTION);
 //	glLoadIdentity();
-//	gluPerspective(60.0f, aspect, 0.1f, 1000.0f); // Increased far clipping plane
+//	//gluPerspective(60.0f, aspect, 0.1f, 1000.0f); // Increased far clipping plane
 //}
 //
 ///* Main function: GLUT runs as a console application starting at main() */
