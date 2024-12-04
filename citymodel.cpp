@@ -42,8 +42,8 @@
 //	glViewport(0, 0, Width, Height);
 //	glMatrixMode(GL_PROJECTION);
 //	glLoadIdentity();
-//	gluPerspective(60.0, Width / Height, 0.1, 1000.0); // 원근투상
-//	//glOrtho(-45.0, 60.0, -40.0, 45.0, 0.0, 100.0); //평행투상
+//	//gluPerspective(60.0, Width / Height, 0.1, 1000.0); // 원근투상
+//	glOrtho(-40.0, 30.0, -40.0, 30.0, 0.0, 100.0); //평행투상
 //	glMatrixMode(GL_MODELVIEW);
 //}
 //
