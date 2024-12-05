@@ -35,7 +35,6 @@ float Window_Width = 1620;
 float Window_Height = 730;
 float carSpeed = 0.5;
 
-bool paused = false;
 
 /*****************Global Variables End*******************/
 void setupLighting()
@@ -643,8 +642,8 @@ void display() {
 	}
 
 	// 추가 백미러 창 설정 (상단 중앙 작은 창)
-	int mirrorWidth = 400; // 백미러 창의 너비
-	int mirrorHeight = 200; // 백미러 창의 높이
+	int mirrorWidth = 300; // 백미러 창의 너비
+	int mirrorHeight = 100; // 백미러 창의 높이
 	int mirrorX = Window_Width / 2 - mirrorWidth / 2; // 화면 중앙에 배치
 	int mirrorY = Window_Height - mirrorHeight + 20; // 상단에서 약간 아래로 배치
 
@@ -723,10 +722,6 @@ void NormalKey(GLubyte key, GLint x, GLint y)
 
 		// 전진
 	case 'w':
-		if (paused) {
-			break;
-		}
-
 		angle += 5;
 
 		// 회전 각도에 따라 이동 방향 계산
@@ -738,10 +733,6 @@ void NormalKey(GLubyte key, GLint x, GLint y)
 
 		// 후진
 	case 's':
-		if (paused) {
-			break;
-		}
-
 		angle += 5;
 
 		// 회전 각도에 따라 이동 방향 계산
