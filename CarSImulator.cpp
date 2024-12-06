@@ -586,11 +586,11 @@ void processLookAtView(GLfloat viewAngles[4][9]) // 시점 배열 크기를 4로 확장
 	viewAngles[0][6] = 0.0;         viewAngles[0][7] = 1.0;  viewAngles[0][8] = 0.0;
 
 	// 백미러 시점 (뒤쪽)
-	viewAngles[3][0] = xt;          viewAngles[3][1] = 2;    viewAngles[3][2] = zt;
-	viewAngles[3][3] = xt + backX;  viewAngles[3][4] = 1.5;  viewAngles[3][5] = zt + backZ;
+	viewAngles[3][0] = -xt;          viewAngles[3][1] = 2;    viewAngles[3][2] = zt;
+	viewAngles[3][3] = -(xt + backX);  viewAngles[3][4] = 1.5;  viewAngles[3][5] = zt + backZ;
 	viewAngles[3][6] = 0.0;         viewAngles[3][7] = 1.0;  viewAngles[3][8] = 0.0;
 }
-
+ 
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -624,7 +624,7 @@ void display() {
 		generateCity();
 		drawGround();
 		drawVStreet();
-
+		glColorMaterial(GL_FRONT, GL_DIFFUSE);
 		for (int z = 0; z < 3; z++) {
 			for (int i = 0; i < 2; i++) {
 				drawRectangleBuilding(0, z * (-25), i);
@@ -665,9 +665,12 @@ void display() {
 	);
 
 	glPushMatrix();
+	glScalef(-1.0, 1.0, 1.0);
+
 	generateCity();
 	drawGround();
 	drawVStreet();
+	glColorMaterial(GL_FRONT, GL_DIFFUSE);
 	for (int z = 0; z < 3; z++) {
 		for (int i = 0; i < 2; i++) {
 			drawRectangleBuilding(0, z * (-25), i);

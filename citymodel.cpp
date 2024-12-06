@@ -42,8 +42,8 @@
 //	glViewport(0, 0, Width, Height);
 //	glMatrixMode(GL_PROJECTION);
 //	glLoadIdentity();
-//	//gluPerspective(60.0, Width / Height, 0.1, 1000.0); // 원근투상
-//	glOrtho(-40.0, 30.0, -40.0, 30.0, 0.0, 100.0); //평행투상
+//	gluPerspective(60.0, Width / Height, 0.1, 1000.0); // 원근투상
+//	//glOrtho(-40.0, 30.0, -40.0, 30.0, 0.0, 100.0); //평행투상
 //	glMatrixMode(GL_MODELVIEW);
 //}
 //
@@ -64,10 +64,7 @@
 //
 //	// 재질 설정
 //	GLfloat rect_diffuse[] = { 0.5f, 0.7f, 0.5f, 1.0f }; //색
-//	GLfloat rect_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f }; // 밝은 하이라이트
 //	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, rect_diffuse);
-//	glMaterialfv(GL_FRONT, GL_SPECULAR, rect_specular);
-//	glMateriali(GL_FRONT, GL_SHININESS, 50); // 중간 정도의 광택
 //
 //	glPushMatrix();
 //	switch (sel)
@@ -149,10 +146,7 @@
 //
 //	// Material properties for the sphere
 //	GLfloat sphere_diffuse[] = { 0.5f, 0.5f, 0.7f, 1.0f };  // Gray diffuse
-//	GLfloat sphere_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f }; // Bright specular
 //	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, sphere_diffuse);
-//	glMaterialfv(GL_FRONT, GL_SPECULAR, sphere_specular);
-//	glMateriali(GL_FRONT, GL_SHININESS, 100); // High shininess for glossy effect
 //
 //	glutSolidSphere(2, 30, 30);
 //
@@ -182,10 +176,7 @@
 //
 //	// Material properties for the sphere
 //	GLfloat cylinder_diffuse[] = { 0.3f, 0.7f, 0.7f, 1.0f };  // Gray diffuse
-//	GLfloat cylinder_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f }; // Bright specular
 //	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cylinder_diffuse);
-//	glMaterialfv(GL_FRONT, GL_SPECULAR, cylinder_specular);
-//	glMateriali(GL_FRONT, GL_SHININESS, 50); // High shininess for glossy effect
 //
 //	// 회전 순서를 높이 적용 후로 조정
 //	glRotatef(-90.0f, 1.0f, 0.0f, 0.0f); // X축 기준으로 회전하여 세로 방향
@@ -229,10 +220,7 @@
 //
 //	// Material properties for the sphere
 //	GLfloat cone_diffuse[] = { 0.7f, 0.5f, 0.7f, 1.0f };  // Gray diffuse
-//	GLfloat cone_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f }; // Bright specular
 //	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cone_diffuse);
-//	glMaterialfv(GL_FRONT, GL_SPECULAR, cone_specular);
-//	glMateriali(GL_FRONT, GL_SHININESS, 50); // High shininess for glossy effect
 //
 //	// 회전 순서를 높이 적용 후로 조정
 //	glRotatef(-90.0f, 1.0f, 0.0f, 0.0f); // X축 기준으로 회전하여 세로 방향
@@ -546,7 +534,7 @@
 //	glLoadIdentity();
 //	//glRotatef(-45, 0, 0, 1);
 //	//gluLookAt(30.0, 60.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0); // Optimized camera position
-//	gluLookAt(8.0, 30.0, 35.0, 8.0, 0.0, 0.0, 0.0, 0.0, -1.0); // Optimized camera position
+//	gluLookAt(8.0, 60.0, 60.0, 8.0, 0.0, 0.0, 0.0, 0.0, -1.0); // Optimized camera position
 //	GLfloat light_position[] = { 30.0f, 60.0f, 30.0f, 1.0f };
 //	glLightfv(GL_LIGHT0, GL_POSITION, light_position); // Update light position
 //	glPushMatrix();
