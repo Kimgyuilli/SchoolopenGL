@@ -149,6 +149,7 @@
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3 %28차 주전자 그리기%29\8_3차주전자 3개.cpp" />
     <ClCompile Include="..\..\..\..\..\OneDrive\바탕 화면\2024 2학기\그래픽스\PPT\그래픽스 파일들\Opengl-source_Only\Opengl-source_22\8_3_CullFaceTest\8_3차주전자.cpp" />
     <ClCompile Include="14주차 실습.cpp" />
+    <ClCompile Include="7x7큐브 스포트라이트.cpp" />
     <ClCompile Include="cargimal.cpp" />
     <ClCompile Include="carsimul.cpp" />
     <ClCompile Include="CarSImulator.cpp" />
@@ -168,6 +169,8 @@
     <ClCompile Include="사각형 회전 증가 튕김%28문제 7%29.cpp" />
     <ClCompile Include="사각형격자게임.cpp" />
     <ClCompile Include="원뿔_과제.cpp" />
+    <ClCompile Include="주전자 광원base.cpp" />
+    <ClCompile Include="주전자 보행자.cpp" />
     <ClCompile Include="클릭시 사각형 이동.cpp" />
     <ClCompile Include="클릭하면 녹색으로.cpp" />
     <ClCompile Include="두더지 경주.cpp" />
