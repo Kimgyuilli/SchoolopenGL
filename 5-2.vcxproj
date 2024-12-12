@@ -171,6 +171,7 @@
     <ClCompile Include="원뿔_과제.cpp" />
     <ClCompile Include="주전자 광원base.cpp" />
     <ClCompile Include="주전자 보행자.cpp" />
+    <ClCompile Include="큐브 도시.cpp" />
     <ClCompile Include="클릭시 사각형 이동.cpp" />
     <ClCompile Include="클릭하면 녹색으로.cpp" />
     <ClCompile Include="두더지 경주.cpp" />

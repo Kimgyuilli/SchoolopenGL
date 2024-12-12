@@ -162,6 +162,9 @@
     <ClCompile Include="7x7큐브 스포트라이트.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="큐브 도시.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
