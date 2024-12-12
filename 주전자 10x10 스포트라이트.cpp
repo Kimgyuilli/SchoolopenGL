@@ -4,17 +4,22 @@
 //#include <gl/glu.h>
 //#include <math.h>
 //
+//float wide = 300.0;
+//float tiles = 100.0;
+//
 //// 전역 변수로 광원의 위치와 방향을 정의
-//GLfloat LightPosition0[] = { 0.0, 20.0, -20.0, 1.0 }; // 0번 광원의 위치 (점광원)
-//GLfloat LightPosition1[] = { 0.0, 50.0, 0.0, 1.0 }; // 바닥 중심 위에 스포트라이트 위치
-//GLfloat LightDirection1[] = { 0.0, -1.0, -1.0 };    // 아래 방향
+//GLfloat LightPosition0[] = { 0.0, 20.0, -50.0, 1.0 }; // 0번 광원의 위치 (점광원)
+//GLfloat LightPosition1[] = { -100.0, 50.0, -50.0, 1.0 }; // 바닥 중심 위에 스포트라이트 위치
+//GLfloat LightDirection1[] = { 50.0, -30.0, -10.0 };    // 아래 방향
+//GLfloat LightPosition2[] = { 100.0, 50.0, -50.0, 1.0 }; // 바닥 중심 위에 스포트라이트 위치
+//GLfloat LightDirection2[] = { -50.0, -30.0, -10.0 };    // 아래 방향
 //
 //// 0번 광원 초기화 함수 (점광원)
 //void InitLight0() {
 //    // 광원의 각 특성을 설정
 //    GLfloat light0_ambient[] = { 0.2, 0.2, 0.2, 1.0 }; // 약한 주변광 (전체적인 기본 밝기)
 //    GLfloat light0_diffuse[] = { 0.8, 0.8, 0.8, 1.0 }; // 강한 확산광 (물체 표면의 밝기)
-//    GLfloat light0_specular[] = { 1.0, 1.0, 1.0, 1.0 }; // 강한 반사광 (반짝임 효과)
+//    GLfloat light0_specular[] = { 0.3, 0.3, 0.3, 1.0 }; // 강한 반사광 (반짝임 효과)
 //
 //    glEnable(GL_LIGHT0); // 0번 광원 활성화
 //    //glLightfv(GL_LIGHT0, GL_AMBIENT, light0_ambient); // 주변광 설정
@@ -35,8 +40,23 @@
 //    glLightfv(GL_LIGHT1, GL_POSITION, LightPosition1); // 위치 설정
 //    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, LightDirection1); // 방향 설정
 //
-//    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 30.0);   // 좁은 확산 각도
+//    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 45.0);   // 좁은 확산 각도
 //    glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 50.0); // 집중도 증가
+//}
+//void InitLight2() {
+//    GLfloat light2_ambient[] = { 0.0, 0.0, 0.0, 1.0 }; // 주변광 제거
+//    GLfloat light2_diffuse[] = { 10.0, 10.0, 10.0, 1.0 }; // 강한 확산광
+//    GLfloat light2_specular[] = { 10.0, 10.0, 10.0, 1.0 }; // 강한 반사광
+//
+//    glEnable(GL_LIGHT2);
+//    glLightfv(GL_LIGHT2, GL_AMBIENT, light2_ambient);  // 주변광 제거
+//    glLightfv(GL_LIGHT2, GL_DIFFUSE, light2_diffuse);  // 확산광 설정
+//    glLightfv(GL_LIGHT2, GL_SPECULAR, light2_specular); // 반사광 설정
+//    glLightfv(GL_LIGHT2, GL_POSITION, LightPosition2); // 위치 설정
+//    glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, LightDirection2); // 방향 설정
+//
+//    glLightf(GL_LIGHT2, GL_SPOT_CUTOFF, 30.0);   // 좁은 확산 각도
+//    glLightf(GL_LIGHT2, GL_SPOT_EXPONENT, 50.0); // 집중도 증가
 //}
 //
 //// 재질(Material) 초기화 함수
@@ -59,10 +79,11 @@
 //    glEnable(GL_COLOR_MATERIAL); // 색상과 조명 연동
 //    glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
 //    GLfloat global_ambient[] = { 0.0, 0.0, 0.0, 1.0 };
-//    //glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient); //전역 주변광 제거
+//    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient); //전역 주변광 제거
 //
-//    //InitLight0();               // 0번 광원 활성화 제거
-//    InitLight1();               // 1번 광원 (스포트라이트) 활성화
+//    InitLight0();               // 0번 광원 활성화 제거
+//    InitLight1();               // 1번 광원 (스포트라이트) 활성화 좌에서 우
+//    InitLight2();               // 2번 광원 (스포트라이트) 활성화 우에서 좌
 //    InitMaterial();             // 재질 초기화
 //}
 //
@@ -105,76 +126,22 @@
 //
 //    // 바닥 그리기
 //    glPushMatrix();
-//    DrawDividedFloor(180.0f, 180.0f, 100, 100); // 너비 180, 깊이 180, 10x10 그리드
+//    DrawDividedFloor(wide, wide, tiles, tiles); // 너비 180, 깊이 180, 10x10 그리드
 //    glPopMatrix();
 //
 //    GLfloat radius = 65.0; // 단지 중심이 위치할 원형 반지름
 //
-//    for (int r = 0; r < 8; r++) {
-//        glPushMatrix();
-//        // 각 단지의 중심 좌표 계산
-//        GLfloat angle = r * 45.0; // 8개의 단지를 균등 배치 (360 / 8 = 45도)
-//        GLfloat x_c = radius * cos(angle * M_PI / 180.0);
-//        GLfloat z_c = radius * sin(angle * M_PI / 180.0);
+//            // 주전자 배열 생성
+//    for (int i = -4; i < 6; i++) {
+//        for (int j = -4; j < 6; j++) {
+//            glPushMatrix();
+//            glTranslated(i * 30 - 11, 5, j * 30); // 큐브 위치
+//            glScalef(1.5, 1.5, 1.5); // 큐브 크기 조정
+//            glColor3f(1.0f, 0.0f, 0.0f); // 셀 색상 (밝은 회색)
+//            glutSolidTeapot(5.0); // 크기 10의 Teapot 생성
 //
-//        glTranslated(x_c, 0, z_c);   // 단지 중심 이동
-//        glRotated(angle, 0, 1, 0);  // 단지 회전
-//
-//        // 큐브 배열 생성
-//        for (int i = 0; i < 7; i++) {
-//            for (int j = 0; j < 7; j++) {
-//                glPushMatrix();
-//                glTranslated((i - 3) * 5, 0, (j - 3) * 5); // 큐브 위치 조정
-//                glScalef(1.5, 1.5, 1.5); // 큐브 크기 조정
-//
-//                glBegin(GL_QUADS);
-//                // 위쪽 면
-//                glColor3f(1.0f, 0.0f, 0.0f);
-//                glVertex3f(1.0f, 1.0f, -1.0f);
-//                glVertex3f(-1.0f, 1.0f, -1.0f);
-//                glVertex3f(-1.0f, 1.0f, 1.0f);
-//                glVertex3f(1.0f, 1.0f, 1.0f);
-//
-//                // 아래쪽 면
-//                glColor3f(0.0f, 1.0f, 0.0f);
-//                glVertex3f(1.0f, -1.0f, 1.0f);
-//                glVertex3f(-1.0f, -1.0f, 1.0f);
-//                glVertex3f(-1.0f, -1.0f, -1.0f);
-//                glVertex3f(1.0f, -1.0f, -1.0f);
-//
-//                // 앞쪽 면
-//                glColor3f(0.0f, 0.0f, 1.0f);
-//                glVertex3f(1.0f, 1.0f, 1.0f);
-//                glVertex3f(-1.0f, 1.0f, 1.0f);
-//                glVertex3f(-1.0f, -1.0f, 1.0f);
-//                glVertex3f(1.0f, -1.0f, 1.0f);
-//
-//                // 뒤쪽 면
-//                glColor3f(1.0f, 1.0f, 0.0f);
-//                glVertex3f(1.0f, -1.0f, -1.0f);
-//                glVertex3f(-1.0f, -1.0f, -1.0f);
-//                glVertex3f(-1.0f, 1.0f, -1.0f);
-//                glVertex3f(1.0f, 1.0f, -1.0f);
-//
-//                // 왼쪽 면
-//                glColor3f(0.0f, 1.0f, 1.0f);
-//                glVertex3f(-1.0f, 1.0f, 1.0f);
-//                glVertex3f(-1.0f, 1.0f, -1.0f);
-//                glVertex3f(-1.0f, -1.0f, -1.0f);
-//                glVertex3f(-1.0f, -1.0f, 1.0f);
-//
-//                // 오른쪽 면
-//                glColor3f(1.0f, 0.0f, 1.0f);
-//                glVertex3f(1.0f, 1.0f, -1.0f);
-//                glVertex3f(1.0f, 1.0f, 1.0f);
-//                glVertex3f(1.0f, -1.0f, 1.0f);
-//                glVertex3f(1.0f, -1.0f, -1.0f);
-//                glEnd();
-//
-//                glPopMatrix();
-//            }
+//            glPopMatrix();
 //        }
-//        glPopMatrix();
 //    }
 //    glFlush();
 //}
@@ -184,7 +151,7 @@
 //    glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 //    glMatrixMode(GL_PROJECTION); // 투상 행렬
 //    glLoadIdentity();            // 항등 행렬 로드
-//    glOrtho(-100, 100, -100, 100, -50, 1000.0); // 평행 투상
+//    glOrtho(-200, 200, -200, 200, -50, 1000.0); // 평행 투상
 //}
 //
 //int main(int argc, char** argv) {

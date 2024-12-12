@@ -163,14 +163,17 @@
     <ClCompile Include="경마 우에서 좌로.cpp" />
     <ClCompile Include="두더지게임.cpp" />
     <ClCompile Include="로봇팔.cpp" />
+    <ClCompile Include="바둑판 운전자.cpp" />
     <ClCompile Include="사각형 확대충돌2.cpp" />
     <ClCompile Include="시계2%28문제 5%29.cpp" />
     <ClCompile Include="사각형 증가 충동감지%28문제 6%29.cpp" />
     <ClCompile Include="사각형 회전 증가 튕김%28문제 7%29.cpp" />
     <ClCompile Include="사각형격자게임.cpp" />
     <ClCompile Include="원뿔_과제.cpp" />
+    <ClCompile Include="주전자 10x10 스포트라이트.cpp" />
     <ClCompile Include="주전자 광원base.cpp" />
     <ClCompile Include="주전자 보행자.cpp" />
+    <ClCompile Include="주전자10x10.cpp" />
     <ClCompile Include="큐브 도시.cpp" />
     <ClCompile Include="클릭시 사각형 이동.cpp" />
     <ClCompile Include="클릭하면 녹색으로.cpp" />
